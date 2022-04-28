@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="P0U-lA-dIz">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Favorite-->
+        <scene sceneID="cZr-eA-vXA">
+            <objects>
+                <navigationController storyboardIdentifier="favoriteNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lG9-hx-hjF" customClass="FavoriteNavigationController" customModule="PokeBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorite" id="AJe-ry-hYb">
+                        <imageReference key="image" image="heart" catalog="system" symbolScale="medium"/>
+                        <imageReference key="selectedImage" image="heart.fill" catalog="system" symbolScale="medium"/>
+                    </tabBarItem>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IW3-Ra-RSg">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="zuQ-yC-DZg" kind="relationship" relationship="rootViewController" id="teC-YX-fmA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6N6-4z-uw8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="219" y="311"/>
+        </scene>
+        <!--Favorite-->
+        <scene sceneID="uzY-J9-V7b">
+            <objects>
+                <viewController storyboardIdentifier="favoriteViewController" id="zuQ-yC-DZg" customClass="FavoriteViewController" customModule="PokeBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="49L-ko-ifS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Bin-J6-WLD">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="ZIh-GI-lBo">
+                                <rect key="frame" x="187" y="430.5" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="C6U-sB-syJ"/>
+                                    <constraint firstAttribute="width" constant="40" id="yph-Kh-p4f"/>
+                                </constraints>
+                                <color key="color" name="AccentColor"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Aon-6K-JM3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Bin-J6-WLD" firstAttribute="leading" secondItem="Aon-6K-JM3" secondAttribute="leading" id="8QP-cg-hbg"/>
+                            <constraint firstItem="Bin-J6-WLD" firstAttribute="top" secondItem="Aon-6K-JM3" secondAttribute="top" id="Of9-v7-vSJ"/>
+                            <constraint firstItem="Aon-6K-JM3" firstAttribute="bottom" secondItem="Bin-J6-WLD" secondAttribute="bottom" id="UDX-E5-5co"/>
+                            <constraint firstItem="Aon-6K-JM3" firstAttribute="trailing" secondItem="Bin-J6-WLD" secondAttribute="trailing" id="deG-QD-3sz"/>
+                            <constraint firstItem="ZIh-GI-lBo" firstAttribute="centerX" secondItem="Aon-6K-JM3" secondAttribute="centerX" id="rbX-Ir-gSE"/>
+                            <constraint firstItem="ZIh-GI-lBo" firstAttribute="centerY" secondItem="Aon-6K-JM3" secondAttribute="centerY" id="wwh-vP-ooe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Favorite" id="TAg-vx-PWa"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="ZIh-GI-lBo" id="ogI-l2-I0i"/>
+                        <outlet property="favoriteTableView" destination="Bin-J6-WLD" id="D5a-og-yBT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GL9-0q-mW0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1182" y="310"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="FAS-M9-oby">
+            <objects>
+                <navigationController storyboardIdentifier="homeNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zpE-Pz-oU0" customClass="HomeNavigationController" customModule="PokeBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" id="cei-4u-rB3">
+                        <imageReference key="image" image="house" catalog="system" symbolScale="medium"/>
+                        <imageReference key="selectedImage" image="house.fill" catalog="system" symbolScale="medium"/>
+                    </tabBarItem>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="KSB-Vl-y7a">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="28"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="VN4-PV-do2" kind="relationship" relationship="rootViewController" id="pmv-VP-kWB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LdS-lW-jCQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="252" y="-368"/>
+        </scene>
+        <!--PokeBox-->
+        <scene sceneID="G6s-rs-sTg">
+            <objects>
+                <viewController storyboardIdentifier="homeViewController" title="PokeBox" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VN4-PV-do2" customClass="HomeViewController" customModule="PokeBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TfR-H3-NW4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xZr-HH-T2m">
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="i6w-aV-GG4">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" name="AccentColor"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="J2d-Dv-A5J"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="J2d-Dv-A5J" firstAttribute="bottom" secondItem="xZr-HH-T2m" secondAttribute="bottom" id="0GV-GQ-g1S"/>
+                            <constraint firstItem="J2d-Dv-A5J" firstAttribute="trailing" secondItem="xZr-HH-T2m" secondAttribute="trailing" id="7kO-gu-ruT"/>
+                            <constraint firstItem="i6w-aV-GG4" firstAttribute="centerX" secondItem="TfR-H3-NW4" secondAttribute="centerX" id="hBm-qd-VfJ"/>
+                            <constraint firstItem="i6w-aV-GG4" firstAttribute="centerY" secondItem="TfR-H3-NW4" secondAttribute="centerY" id="lAl-cC-73x"/>
+                            <constraint firstItem="xZr-HH-T2m" firstAttribute="top" secondItem="J2d-Dv-A5J" secondAttribute="top" id="tNe-KF-gcG"/>
+                            <constraint firstItem="xZr-HH-T2m" firstAttribute="leading" secondItem="J2d-Dv-A5J" secondAttribute="leading" id="zcO-uL-ftJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="PokeBox" id="BnO-Bq-R7P"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="i6w-aV-GG4" id="bRw-m9-HZ0"/>
+                        <outlet property="pokemonTableView" destination="xZr-HH-T2m" id="Znc-AU-fdb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fut-rn-GCR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1176.8115942028987" y="-368.30357142857139"/>
+        </scene>
+        <!--Tab Bar View Controller-->
+        <scene sceneID="D9R-01-Ldx">
+            <objects>
+                <tabBarController storyboardIdentifier="mainTabBar" useStoryboardIdentifierAsRestorationIdentifier="YES" id="P0U-lA-dIz" customClass="TabBarViewController" customModule="PokeBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EHv-K0-Tvj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="zpE-Pz-oU0" kind="relationship" relationship="viewControllers" id="Uvc-YU-C5b"/>
+                        <segue destination="lG9-hx-hjF" kind="relationship" relationship="viewControllers" id="E4p-oJ-ZLn"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FDz-b6-XAo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1325" y="-71"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
